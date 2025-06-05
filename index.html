@@ -1,114 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-
-    <title>AgroLeite</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>AgroLeite</title>
 </head>
+<body>
+  <header class="cabecalho">
+    <h1 class="cabecalho-titulo">AgroLeite</h1>
+    <nav>
+      <ul class="cabecalho-lista">
+        <li><a href="#introducao">Introdução a AgroLeite</a></li>
+        <li><a href="#sobre">Sobre a AgroLeite</a></li>
+        <li><a href="#local">Local</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#programacao">Programação</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <body>
-    <header class="cabecalho">
-        <h1 class="cabecalho-titulo">AgroLeite</h1>
-        <nav>
-            <ul class="cabecalho-lista">
-                <li class="cabecalho-lista-item"><a href="#introducao">Introdução a AgroLeite</a></li>
-                <li class="cabecalho-lista-item"><a href="#sobre">Sobre a AgroLeite</a></li>
-                <li class="cabecalho-lista-item"><a href="#local">Local</a></li>
-                <li class="cabecalho-lista-item"><a href="#galeria">Galeria</a></li>
-                <li class="cabecalho-lista-item"><a href="#programacao">Programação</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="introducao">
-        <div class="introducao-texto">
-            <h2>Bem-vindos a AgroLeite</h2>
-            <p>A AgroLeite é um dos maiores eventos do setor agropecuário no Brasil. Todos os anos, milhares de pessoas participam dessa feira, que une conhecimento, inovação, tradição e oportunidades de negócios. Navegue pelo nosso site para conhecer mais sobre o evento, descobrir onde acontece, explorar fotos incríveis e conferir tudo o que a AgroLeite tem a oferecer!</p>
-        </div>
-        <img class="introducao-imagem" src="imagens/vaca inicio.png" alt="vaca">
-    </section>
-    
-    <section id="sobre">
-        <div class="sobre-texto">
-            <h2>Sobre a AgroLeite</h2>
-            <p>A AgroLeite é uma feira técnica voltada à cadeia leiteira, organizada pela Cooperativa Castrolanda. O evento acontece anualmente na cidade de Castro, no Paraná, e é reconhecido nacionalmente por sua estrutura, programação e impacto econômico. Durante os dias de evento, o público tem acesso a exposições de animais, palestras, feira de máquinas e equipamentos agrícolas, atrações culturais e gastronômicas, além de espaços voltados para inovação e tecnologia no campo.</p>
-        </div>
-        <img class="sobre-imagem" src="imagens/1.jpeg" alt="Campeões do leite, AgroLeite">
-    </section>
-
-<section id="local">
-    <div class="local-texto">
-        <h2>Onde Acontece a AgroLeite</h2>
-        <p>A AgroLeite é realizada no Parque de Exposições Dario Macedo, na cidade de Castro (PR). A estrutura é completa e preparada para receber milhares de visitantes com conforto e segurança.
-O parque conta com pavilhões de exposição, arenas para julgamento de animais, praça de alimentação, auditórios para palestras e muito mais.
-</p>
+  <section id="introducao" class="introducao-texto-imagem">
+    <div>
+      <h2>Bem-vindos a AgroLeite</h2>
+      <p>A AgroLeite é um dos maiores eventos do setor agropecuário no Brasil...</p>
     </div>
-    <img class="local-imagem" src="imagens/2.jpeg" alt="Imagem de drone AgroLeite">
-    <img class="local-imagem" src="imagens/3.jpg" alt="Imagem durante a AgroLeite, praça">
-</section>
+    <img src="imagens/vaca inicio.png" alt="vaca" />
+  </section>
 
-<section id="galeria>
-    <div class="galeria-texto">
-        <h2>Galeria</h2>
-          <img class="local-galeria" src="imagens/4.jpg" alt="A imagem mostra a grandiosidade da estrutura montada para o evento, com diversos pavilhões e áreas de exposição.
-">
-    <img class="local-galeria" src="imagens/5.png" alt="Criadores recebem troféus ao lado de seus animais, destacando a excelência genética apresentada na feira.
-">
- <img class="local-galeria" src="imagens/6.png" alt="Demonstração de maquinário agrícola moderno
-">
- <img class="local-galeria" src="imagens/7.png" alt="Público visitante circulando pelos estandes da feira
-">
- <img class="local-galeria" src="imagens/8.png" alt="Palestra técnica sobre inovação na produção leiteira
-">
- <img class="local-galeria" src="imagens/9.png" alt=" Atividades educativas e lúdicas ensinam os pequenos sobre o processo de produção do leite.
-">
+  <section id="sobre" class="sobre-texto-imagem">
+    <div>
+      <h2>Sobre a AgroLeite</h2>
+      <p>A AgroLeite é uma feira técnica voltada à cadeia leiteira...</p>
+    </div>
+    <img src="imagens/1.jpeg" alt="Campeões do leite, AgroLeite" />
+  </section>
+
+  <section id="local" class="local-texto-imagem">
+    <div>
+      <h2>Onde Acontece a AgroLeite</h2>
+      <p>A AgroLeite é realizada no Parque de Exposições Dario Macedo...</p>
+    </div>
+    <img src="imagens/2.jpeg" alt="Imagem de drone AgroLeite" />
+    <img src="imagens/3.jpg" alt="Imagem durante a AgroLeite, praça" />
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria</h2>
+    <div class="galeria-container">
+      <img class="local-galeria" src="imagens/4.jpg" alt="Estrutura do evento" />
+      <img class="local-galeria" src="imagens/5.png" alt="Criadores e troféus" />
+      <img class="local-galeria" src="imagens/6.png" alt="Maquinário agrícola" />
+      <img class="local-galeria" src="imagens/7.png" alt="Público visitante" />
+      <img class="local-galeria" src="imagens/8.png" alt="Palestra técnica" />
+      <img class="local-galeria" src="imagens/9.png" alt="Atividades educativas" />
     </div>
   </section>
 
-
   <section id="programacao">
-    <div class="programacao-texto">
-        <h2>O que você vai encontrar na AgroLeite</h2>
-        <p>A AgroLeite conta com uma programação diversificada, reunindo atividades técnicas, culturais e comerciais.
+    <h2>O que você vai encontrar na AgroLeite</h2>
+    <p>A AgroLeite conta com uma programação diversificada, reunindo atividades técnicas, culturais e comerciais.</p>
+    <ul>
+      <li>Exposição de bovinos leiteiros de alta genética</li>
+      <li>Palestras e painéis com especialistas</li>
+      <li>Demonstrações de equipamentos agrícolas</li>
+      <li>Praça gastronômica com produtos locais</li>
+      <li>Espaços de lazer e atividades para crianças</li>
+      <li>Apresentações artísticas e culturais</li>
+    </ul>
+  </section>
 
-        </p>
-        <p>
-Confira alguns destaques:
-Exposição de bovinos leiteiros de alta genética.
-Palestras e painéis com especialistas.
-Demonstrações de equipamentos agrícolas.
-Praça gastronômica com produtos locais.
-Espaços de lazer e atividades para crianças.
-Apresentações artísticas e culturais.</p>
-    </div>
-</section>
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <p>Quer saber mais sobre a AgroLeite? Fale com a equipe organizadora:</p>
+    <p>📍 Local: Parque de Exposições Dario Macedo – Castro/PR</p>
+    <p>📧 E-mail: contato@agroleite.com.br</p>
+    <p>☎️ Telefone: (42) 99818-8582</p>
+    <p>Siga-nos nas redes sociais: @AgroLeiteOficial</p>
+  </section>
 
-<section id="contato">
-    <div class="contato-texto">
-        <h2>Entre em Contato
-</h2>
-        <p>Quer saber mais sobre a AgroLeite? Fale com a equipe organizadora.
-📍 Local: Parque de Exposições Dario Macedo – Castro/PR
- 📧 E-mail: contato@agroleite.com.br
- ☎️ Telefone: (42) 99818-8582
-Siga-nos nas redes sociais: @AgroLeiteOficial
-</p>
-
-
-
-    
-
-
-<footer class="rodape">
-        <h3>Desenvolvido por Heloisa Setelicki</h3>
-        <a href="https://www.instagram.com/heloisa.setelicki/">
-        <img class="musicas-logo" src="imagens/icone-do-instagram_768467-672.avif" alt="Logo Instagram">
-        <a href="https://github.com/Heloisa7licki">
-        <img class="musicas-logo" src="imagens/giht.png" alt="Logo GihtHub">
-
-    </footer>
+  <footer class="rodape">
+    <h3>Desenvolvido por Heloisa Setelicki</h3>
+    <a href="https://www.instagram.com/heloisa.setelicki/">
+      <img class="musicas-logo" src="imagens/icone-do-instagram_768467-672.avif" alt="Logo Instagram" />
+    </a>
+    <a href="https://github.com/Heloisa7licki">
+      <img class="musicas-logo" src="imagens/giht.png" alt="Logo GitHub" />
+    </a>
+  </footer>
 </body>
-
 </html>
