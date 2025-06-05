@@ -26,7 +26,7 @@ header, footer {
 }
 
 .cabecalho-lista a {
-  color: #0ff;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-weight: bold;
 }
@@ -84,7 +84,7 @@ body.alto-contraste {
 }
 
 body.alto-contraste a {
-  color: #0ff !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .acessibilidade-botoes {
