@@ -53,12 +53,6 @@ nav a:hover {
   margin-top: 20px;
 }
 
-.hero img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 10px;
-}
 
 .hero-texto {
   margin-top: 20px;
