@@ -6,9 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AgroLeite</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .acessibilidade {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #000;
+      color: #fff;
+      padding: 0.5rem;
+      z-index: 1000;
+      display: flex;
+      gap: 1rem;
+    }
+    .alto-contraste {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+    .alto-contraste a {
+      color: #0ff !important;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Botões de Acessibilidade -->
+  <div class="acessibilidade">
+    <button onclick="aumentarFonte()">A+</button>
+    <button onclick="diminuirFonte()">A-</button>
+    <button onclick="alternarContraste()">Alto Contraste</button>
+  </div>
+
+  <!-- VLibras Plugin -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <script>
+    function aumentarFonte() {
+      document.body.style.fontSize = 'larger';
+    }
+    function diminuirFonte() {
+      document.body.style.fontSize = 'smaller';
+    }
+    function alternarContraste() {
+      document.body.classList.toggle('alto-contraste');
+    }
+  </script>
+
   <header>
     <h1 class="cabecalho-titulo">AgroLeite</h1>
     <nav>
