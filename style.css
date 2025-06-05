@@ -10,6 +10,7 @@ header, footer {
   background-color: #000;
   padding: 1rem;
   text-align: center;
+  color: #fff;
 }
 
 .cabecalho-titulo {
@@ -26,7 +27,7 @@ header, footer {
 }
 
 .cabecalho-lista a {
-  color: rgb(255, 255, 255);
+  color: #0ff;
   text-decoration: none;
   font-weight: bold;
 }
@@ -79,12 +80,22 @@ footer img.musicas-logo {
 }
 
 body.alto-contraste {
-  background-color: #000 !important;
-  color: #fff !important;
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+body.alto-contraste section,
+body.alto-contraste p,
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste ul,
+body.alto-contraste li {
+  color: #000 !important;
 }
 
 body.alto-contraste a {
-  color: rgb(255, 255, 255) !important;
+  color: #000 !important;
 }
 
 .acessibilidade-botoes {
@@ -124,3 +135,25 @@ body.alto-contraste a {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Acessibilidade JS */
+.acessibilidade-botoes {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 10000;
+}
+
+/* Botão HTML */
+/* Este bloco deve ser inserido no HTML: */
+/*
+<div class="acessibilidade-botoes">
+  <button onclick="alternarContraste()">Alto Contraste</button>
+</div>
+
+<script>
+  function alternarContraste() {
+    document.body.classList.toggle('alto-contraste');
+  }
+</script>
+*/
