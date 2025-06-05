@@ -1,4 +1,3 @@
-
 /* Reset básico */
 * {
   margin: 0;
@@ -61,11 +60,19 @@ a:hover {
 }
 
 .introducao-texto-imagem img,
-.sobre-texto-imagem img,
-.local-texto-imagem img {
+.sobre-texto-imagem img {
   flex: 1 1 300px;
   max-width: 100%;
   border-radius: 10px;
+}
+
+/* Ajuste específico para as imagens da seção LOCAL */
+.local-texto-imagem img {
+  width: 45%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 /* Galeria em 3 colunas e 2 linhas */
@@ -127,6 +134,16 @@ a:hover {
 @media (max-width: 768px) {
   .galeria-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .local-texto-imagem {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .local-texto-imagem img {
+    width: 90%;
+    margin-top: 20px;
   }
 }
 
