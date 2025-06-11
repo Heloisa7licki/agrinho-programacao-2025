@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratos - Do Campo à Cidade</title>
+ <link rel="stylesheet" href="agricultura.css" />
+<link rel="stylesheet" href="pratos.css" />
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Do Campo à Cidade</h1>
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+    <nav id="menu">
+      <a href="pratos.html">Pratos</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="eventos.html">Eventos</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <h2>Pratos</h2>
+    <div class="cards-container">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="imagens/doce de abrobara.jpg" alt="Doce de Abóbora com Coco">
+          </div>
+          <div class="card-back">Doce de Abóbora</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="imagens/doce-de-leite-de-pressao.webp" alt="Doce de Leite">
+          </div>
+          <div class="card-back">Doce de Leite</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="imagens/pao-de-queijo-facil-e-delicioso-3-.webp" alt="Pão de Queijo">
+          </div>
+          <div class="card-back">Pão de Queijo</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="imagens/pamonha.webp" alt="Pamonha Salgada">
+          </div>
+          <div class="card-back">Pamonha</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="imagens/galinhada.jpg" alt="Galinhada">
+          </div>
+          <div class="card-back">Galinhada</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="imagens/quentao.webp" alt="Quentão">
+          </div>
+          <div class="card-back">Quentão</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <span>Desenvolvido por Heloísa Setelicki</span>
+    <a href="https://github.com/Heloisa7licki" target="_blank">
+      <img src="imagens/giht.png" alt="GitHub" />
+    </a>
+    <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank">
+      <img src="imagens/insta.png" alt="Instagram" />
+    </a>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('ativo');
+    });
+  </script>
+
+</body>
+</html>
