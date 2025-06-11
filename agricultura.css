@@ -21,8 +21,8 @@ body > main {
 
 /* CABEÇALHO */
 header {
-  background-color: #0d420f;
-  color: white;
+  background-color: #e2e2e2;
+  color:#333;
   padding: 20px;
   position: relative;
   display: flex;
@@ -66,7 +66,7 @@ main {
 }
 .conteudo h2 {
   font-size: 2em;
-  color: #0d420f;
+  color: #e2e2e2;
   margin-bottom: 20px;
 }
 .conteudo p {
@@ -76,7 +76,7 @@ main {
 
 /* RODAPÉ */
 footer {
-  background-color: #f4f4f4;
+  background-color: #e2e2e2;
   padding: 15px 20px;
   text-align: center;
   display: flex;
