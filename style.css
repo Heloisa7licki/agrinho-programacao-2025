@@ -1,5 +1,5 @@
 header {
-  background-color: #4CAF50;
+  background-color: #1b521c;
   color: white;
   display: flex;
   align-items: center;
@@ -39,9 +39,9 @@ header {
   position: absolute;
   top: 60px; /* altura do header + margem */
   right: 20px;
-  background-color: #333;
+  background-color: #ffffff;
   border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(6, 60, 4, 0.2);
   width: 150px;
 }
 
@@ -72,4 +72,33 @@ header {
 
 .menu li a:hover {
   background-color: #555;
+}
+
+
+.rodape {
+  background-color: #1b521c;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.rodape h3 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.musicas-logo {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  vertical-align: middle;
 }
