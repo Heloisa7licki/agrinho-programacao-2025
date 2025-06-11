@@ -1,4 +1,8 @@
 /* Reset e layout básico */
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -12,14 +16,7 @@ body {
   min-height: 100vh;
 }
 
-main {
-  flex: 1;
-  padding: 20px;
-  margin-top: 60px; /* altura do header fixo */
-  margin-bottom: 60px; /* espaço para o rodapé */
-}
-
-/* Cabeçalho */
+/* Cabeçalho fixo */
 header {
   background-color: #4CAF50;
   color: white;
@@ -58,15 +55,15 @@ header {
   border-radius: 2px;
 }
 
-/* Menu */
+/* Menu suspenso */
 .menu {
   position: absolute;
   top: 60px; /* logo abaixo do header */
-  right: 40px; /* afastado da borda */
+  right: 20px;
   background-color: #333;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  width: 150px;
+  width: 160px;
   z-index: 1001;
 }
 
@@ -93,13 +90,21 @@ header {
   text-decoration: none;
   display: block;
   padding: 12px 15px;
+  font-weight: 600;
 }
 
 .menu li a:hover {
   background-color: #555;
 }
 
-/* Rodapé */
+/* Espaço para o conteúdo não ficar atrás do header */
+main {
+  flex: 1;
+  padding: 80px 20px 80px 20px; /* topo e base para header e footer */
+  background: #f4f4f4;
+}
+
+/* Rodapé que fica no final */
 .rodape {
   background-color: #4CAF50;
   color: white;
@@ -110,9 +115,6 @@ header {
   align-items: center;
   gap: 15px;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-  position: relative;
-  bottom: 0;
-  width: 100%;
   flex-shrink: 0;
 }
 
