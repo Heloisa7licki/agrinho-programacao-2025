@@ -4,10 +4,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+
+html, body {
+  height: 100%;
   font-family: Arial, sans-serif;
   background-color: #fdfdfd;
   color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CONTAINER PRINCIPAL */
+body > main {
+  flex: 1;
 }
 
 /* CABEÇALHO */
