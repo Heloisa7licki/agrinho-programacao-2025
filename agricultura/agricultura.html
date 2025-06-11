@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do Campo à Cidade</title>
+  <link rel="stylesheet" href="agricultura.css" />
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Do Campo à Cidade</h1>
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+    <nav id="menu">
+      <a href="receitas.html">Receitas</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="eventos.html">Eventos</a>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <section class="conteudo">
+      <h2>Conectando o campo com a cidade</h2>
+      <p>A união entre o campo e a cidade promove sustentabilidade, segurança alimentar e qualidade de vida...</p>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <span>Desenvolvido por Heloísa Setelicki</span>
+    <a href="https://github.com/Heloisa7licki" target="_blank">
+      <img src="giht.png" alt="GitHub" />
+    </a>
+    <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank">
+      <img src="insta.png" alt="Instagram" />
+    </a>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('ativo');
+    });
+  </script>
+
+</body>
+</html>
