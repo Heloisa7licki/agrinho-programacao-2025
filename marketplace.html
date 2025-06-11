@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketplace</title>
+  <link rel="stylesheet" href="agricultura.css" />
+  <link rel="stylesheet" href="marketplace.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Do Campo à Cidade</h1>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <nav id="menu">
+      <a href="pratos.html">Pratos</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="eventos.html">Eventos</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="text-align: center;">Marketplace Rural</h2>
+    <div class="cards-container">
+
+      <!-- Vendedor 1 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="placeholder-text">Vendedor</div>
+          </div>
+          <div class="card-back">
+            <p><strong>Nome:</strong> Dona Maria do Pão</p>
+            <p><strong>Produto:</strong> Pão caseiro de milho</p>
+            <p><strong>Telefone:</strong> (42) 99999-1234</p>
+            <p><strong>Local:</strong> Bairro Rural São Pedro</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vendedor 2 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="placeholder-text">Vendedor</div>
+          </div>
+          <div class="card-back">
+            <p><strong>Nome:</strong> Seu João da Pamonha</p>
+            <p><strong>Produto:</strong> Pamonha doce e salgada</p>
+            <p><strong>Telefone:</strong> (42) 98888-4567</p>
+            <p><strong>Local:</strong> Estrada da Colônia Esperança</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vendedora 3 -->
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="placeholder-text">Vendedor</div>
+          </div>
+          <div class="card-back">
+            <p><strong>Nome:</strong> Ana do Doce</p>
+            <p><strong>Produto:</strong> Doce de leite e cocada</p>
+            <p><strong>Telefone:</strong> (42) 97777-7890</p>
+            <p><strong>Local:</strong> Sítio Santa Luzia</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span>Desenvolvido por Heloísa Setelicki</span>
+    <a href="https://github.com/Heloisa7licki" target="_blank"><img src="imagens/giht.png" alt="GitHub" /></a>
+    <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank"><img src="imagens/insta.png" alt="Instagram" /></a>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('ativo');
+    });
+  </script>
+
+</body>
+</html>
