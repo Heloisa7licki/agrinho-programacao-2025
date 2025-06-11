@@ -1,104 +1,55 @@
-header {
-  background-color: #4CAF50;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.logo {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.menu-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 5px;
-}
-
-.menu-toggle .bar {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-}
-
-.menu {
-  position: absolute;
-  top: 60px; /* altura do header + margem */
-  right: 20px;
-  background-color: #333;
-  border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  width: 150px;
-}
-
-.menu[hidden] {
-  display: none;
-}
-
-.menu ul {
-  list-style: none;
+body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
-.menu li {
-  border-bottom: 1px solid #444;
-}
-
-.menu li:last-child {
-  border-bottom: none;
-}
-
-.menu li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  padding: 12px 15px;
-}
-
-.menu li a:hover {
-  background-color: #555;
-}
-
-
-.rodape {
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  padding: 15px 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.hero {
+  background: url('imagens/campo\ imagem.jpg') no-repeat center center/cover;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  position: relative;
 }
 
-.rodape h3 {
-  margin: 0;
-  font-weight: normal;
-  font-size: 1rem;
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.musicas-logo {
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  vertical-align: middle;
+.hero-content {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero a {
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: #45a049;
+}
+
+section#agricultura-urbana {
+  padding: 60px;
+  background-color: #f4f4f4;
 }
