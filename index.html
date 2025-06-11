@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Do Campo a Cidade</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Do Campo a Cidade</h1>
-    <div id="menu-toggle" class="menu-icon">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  </header>
+<header>
+  <h1 class="logo">Do Campo a Cidade</h1>
+
+  <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <nav id="menu" class="menu" hidden>
+    <ul>
+      <li><a href="receitas.html">Receitas</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+    </ul>
+  </nav>
+</header>
 
   <nav id="menu" class="menu">
     <ul>
