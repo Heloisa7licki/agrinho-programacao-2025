@@ -5,31 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Do Campo a Cidade</title>
   <link rel="stylesheet" href="style.css" />
-<header>
-  <h1 class="logo">Do Campo a Cidade</h1>
+</head>
+<body>
+  <header>
+    <h1 class="logo">Do Campo a Cidade</h1>
 
-  <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
 
-  <nav id="menu" class="menu" hidden>
-    <ul>
-      <li><a href="receitas.html">Receitas</a></li>
-      <li><a href="marketplace.html">Marketplace</a></li>
-      <li><a href="agenda.html">Agenda</a></li>
-    </ul>
-  </nav>
-</header>
-
-  <nav id="menu" class="menu">
-    <ul>
-      <li><a href="receitas.html">Receitas</a></li>
-      <li><a href="marketplace.html">Marketplace</a></li>
-      <li><a href="agenda.html">Agenda</a></li>
-    </ul>
-  </nav>
+    <nav id="menu" class="menu" hidden>
+      <ul>
+        <li><a href="receitas.html">Receitas</a></li>
+        <li><a href="marketplace.html">Marketplace</a></li>
+        <li><a href="agenda.html">Agenda</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <section id="home">
@@ -38,23 +32,45 @@
     </section>
   </main>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+  <footer class="rodape">
+    <h3>Desenvolvido por Heloisa Setelicki</h3>
+    <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank" rel="noopener noreferrer">
+      <img class="musicas-logo" src="imagens/icone-do-instagram_768467-672.avif" alt="Logo Instagram" />
+    </a>
+    <a href="https://github.com/Heloisa7licki" target="_blank" rel="noopener noreferrer">
+      <img class="musicas-logo" src="imagens/giht.png" alt="Logo GitHub" />
+    </a>
+  </footer>
 
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-  </script>
-
-<footer class="rodape">
-  <h3>Desenvolvido por Heloisa Setelicki</h3>
-  <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank" rel="noopener noreferrer">
-    <img class="insta-logo" src="imagens/icone-do-instagram_768467-672.avif" alt="Logo Instagram" />
-  </a>
-  <a href="https://github.com/Heloisa7licki" target="_blank" rel="noopener noreferrer">
-    <img class="insta-logo" src="imagens/giht.png" alt="Logo GitHub" />
-  </a>
-</footer>
+  <script src="script.js"></script>
 </body>
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+menuToggle.addEventListener('click', (e) => {
+  e.stopPropagation(); // evita fechar ao clicar no botão
+  const isHidden = menu.hasAttribute('hidden');
+  if (isHidden) {
+    menu.removeAttribute('hidden');
+    menuToggle.setAttribute('aria-expanded', 'true');
+  } else {
+    menu.setAttribute('hidden', '');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Fecha o menu se clicar fora dele
+document.addEventListener('click', () => {
+  if (!menu.hasAttribute('hidden')) {
+    menu.setAttribute('hidden', '');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Impede fechar o menu ao clicar dentro dele
+menu.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
 </html>
