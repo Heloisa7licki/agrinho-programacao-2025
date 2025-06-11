@@ -4,27 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Do Campo a Cidade</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <h1 class="logo">Do Campo a Cidade</h1>
+  <h1 class="logo">Do Campo a Cidade</h1>
 
-    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
+  <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
 
-    <nav id="menu" class="menu" hidden>
-      <ul>
-        <li><a href="receitas.html">Receitas</a></li>
-        <li><a href="marketplace.html">Marketplace</a></li>
-        <li><a href="agenda.html">Agenda</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav id="menu" class="menu" hidden>
+    <ul>
+      <li><a href="receitas.html">Receitas</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+  <nav id="menu" class="menu">
+    <ul>
+      <li><a href="receitas.html">Receitas</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+    </ul>
+  </nav>
 
   <main>
     <section id="home">
@@ -32,6 +41,17 @@
       <p>Aqui explicamos a conexão entre o campo e a cidade, mostrando como as tradições rurais e a vida urbana se complementam.</p>
     </section>
   </main>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+  </script>
+
+
 
   <footer class="rodape">
     <h3>Desenvolvido por Heloisa Setelicki</h3>
