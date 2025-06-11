@@ -77,6 +77,7 @@ main {
 /* RODAPÉ */
 footer {
   background-color: #0d420f;
+  color: #ffffff;
   padding: 15px 20px;
   text-align: center;
   display: flex;
