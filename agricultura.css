@@ -112,7 +112,7 @@ footer img {
   margin-top: 10px;
 }
 
-/* Barra lateral fixa com quadrados */
+/* Barra lateral fixa com quadradinhos */
 .barra-lateral-agricultura {
   width: 220px;
   background-color: #f3fdf1;
@@ -156,7 +156,7 @@ footer img {
   font-size: 1.1em;
 }
 
-/* Responsivo para telas menores */
+/* Responsivo */
 @media (max-width: 768px) {
   body > .conteudo-completo {
     flex-direction: column;
@@ -168,6 +168,7 @@ footer img {
     justify-content: center;
     padding: 20px;
     gap: 20px;
+    flex-wrap: wrap;
   }
 
   .card-agri {
