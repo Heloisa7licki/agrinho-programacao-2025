@@ -9,7 +9,7 @@
 .card {
   width: 250px;
   height: 250px;
-  perspective: 1000px; /* Mantém o efeito 3D */
+  perspective: 1000px; /
 }
 
 .card-inner {
@@ -55,7 +55,7 @@
   transform: rotateY(180deg);
   color: #333;
   font-size: 1em;
-  display: flex; /* Adicionado */
+  display: flex; 
   flex-direction: column;
   gap: 8px;
 }

@@ -1,7 +1,7 @@
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px; /* aumentei o espaçamento entre os cards */
+  gap: 40px; 
   justify-items: center;
   padding: 30px;
 }
@@ -10,7 +10,7 @@
   width: 250px;
   height: 250px;
   perspective: 1000px;
-  margin-bottom: 40px; /* garante espaço para a descrição */
+  margin-bottom: 40px; 
 }
 
 

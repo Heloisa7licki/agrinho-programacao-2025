@@ -1,4 +1,4 @@
-/* Reset e base */
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +18,6 @@ body > main {
   flex: 1;
 }
 
-/* Cabeçalho */
 header {
   background-color: #0d420f;
   color: #fff;
@@ -39,7 +38,6 @@ header h1 {
   user-select: none;
 }
 
-/* Menu de navegação */
 nav {
   position: absolute;
   top: 100%;
@@ -66,7 +64,7 @@ nav a:hover {
   background-color: #f0f0f0;
 }
 
-/* Conteúdo principal */
+
 main {
   padding: 40px 20px;
 }
@@ -88,7 +86,7 @@ main {
   margin-top: 10px;
 }
 
-/* Rodapé */
+
 footer {
   background-color: #0d420f;
   color: #fff;
@@ -109,7 +107,7 @@ footer img {
   height: 24px;
 }
 
-/* Cards interativos (se usados) */
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
