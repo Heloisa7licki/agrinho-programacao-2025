@@ -1,7 +1,7 @@
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px; /* aumentei o espaçamento entre os cards */
   justify-items: center;
   padding: 30px;
 }
@@ -10,7 +10,10 @@
   width: 250px;
   height: 250px;
   perspective: 1000px;
+  margin-bottom: 40px; /* garante espaço para a descrição */
 }
+
+
 
 .card-inner {
   width: 100%;
@@ -56,7 +59,7 @@
 .descricao {
   text-align: center;
   font-size: 0.95em;
-  color: #a4a2a2;
-  margin-top: 8px;
+  color: #838383;
+  margin-top: 10px;
   max-width: 250px;
 }
