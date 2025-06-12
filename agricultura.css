@@ -60,7 +60,7 @@ nav a:hover {
   background-color: #f0f0f0;
 }
 
-/* CONTEÚDO */
+
 main {
   padding: 40px 20px;
 }
@@ -74,7 +74,7 @@ main {
   line-height: 1.7;
 }
 
-/* RODAPÉ */
+
 footer {
   background-color: #0d420f;
   color: #ffffff;
@@ -100,7 +100,7 @@ footer a {
 
 
 
-/* FLASH CARDS DOS PRATOS */
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -153,4 +153,23 @@ footer a {
   color: #333;
   padding: 10px;
   text-align: center;
+}
+
+.texto-imagem {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Responsivo em telas menores */
+}
+
+.texto {
+  flex: 1;
+  min-width: 280px;
+}
+
+.imagem img {
+  width: 350px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
