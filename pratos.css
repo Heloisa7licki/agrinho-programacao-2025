@@ -1,16 +1,16 @@
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas por linha */
-  gap: 20px;  /* Ajuste o espaçamento entre os cards */
-  justify-items: center;  /* Centraliza os cards dentro de cada célula */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;  
+  justify-items: center;  
   padding: 30px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .card {
-  width: 220px;  /* Tamanho fixo para os cards */
-  height: 220px;  /* Tamanho fixo para os cards, mantendo quadrado */
+  width: 220px;  
+  height: 270px;  
   perspective: 1000px;
   margin-bottom: 40px;
 }
@@ -25,7 +25,7 @@
 
 .card:hover .card-inner {
   transform: rotateY(180deg);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra no hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
 }
 
 .card-front, .card-back {
@@ -38,9 +38,9 @@
 }
 
 .card-front img {
-  width: 100%;  /* A imagem vai ocupar 100% do espaço do card */
-  height: 100%;  /* A imagem vai ocupar 100% do espaço do card */
-  object-fit: cover;  /* A imagem vai cobrir o espaço sem distorcer */
+  width: 100%; 
+  height: 100%;  
+  object-fit: cover;  
 }
 
 .card-back {
@@ -62,29 +62,6 @@
   font-size: 0.95em;
   color: #838383;
   margin-top: 10px;
-  max-width: 220px;  /* Ajustando para o tamanho dos cards */
-  line-height: 1.5em;
-}
-
-
-@media (max-width: 1024px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em telas médias */
-  }
-
-  .card {
-    width: 180px;  /* Cards um pouco menores em telas médias */
-    height: 180px;  /* Mantendo o formato quadrado */
-  }
-}
-
-@media (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: 1fr; /* 1 card por linha em telas pequenas */
-  }
-
-  .card {
-    width: 160px;  /* Cards ainda menores em telas pequenas */
-    height: 160px;  /* Mantendo o formato quadrado */
-  }
+  max-width: 220px;  
+  line-height: 1.5em;  
 }
