@@ -1,9 +1,12 @@
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
-  gap: 40px; 
-  justify-items: center;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas fixas */
+  gap: 40px; /* espaçamento entre os cards */
+  justify-items: center; /* centraliza os cards */
   padding: 30px;
+  width: 100%; /* Garante que o container ocupe toda a largura */
+  max-width: 100%; /* Garante que o container não ultrapasse a largura da tela */
+  box-sizing: border-box; /* Inclui padding no cálculo da largura */
 }
 
 .card {
