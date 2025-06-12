@@ -115,7 +115,7 @@ footer img {
 /* Barra lateral fixa com quadradinhos */
 .barra-lateral-agricultura {
   width: 220px;
-  background-color: #f3fdf1;
+  background-color: #e3e3e3;
   padding: 30px 10px;
   display: flex;
   flex-direction: column;
