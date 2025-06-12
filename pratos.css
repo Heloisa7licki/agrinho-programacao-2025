@@ -51,3 +51,12 @@
   padding: 12px;
   text-align: center;
 }
+
+
+.descricao {
+  text-align: center;
+  font-size: 0.95em;
+  color: #a4a2a2;
+  margin-top: 8px;
+  max-width: 250px;
+}
