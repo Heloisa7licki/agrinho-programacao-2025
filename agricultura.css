@@ -20,7 +20,7 @@ body > .conteudo-completo {
 }
 
 header {
-  background-color: #0d420f;
+  background-color: #000000;
   color: #fff;
   padding: 20px;
   position: relative;
@@ -70,7 +70,7 @@ nav a:hover {
 }
 
 footer {
-  background-color: #0d420f;
+  background-color: #000000;
   color: #fff;
   padding: 15px 20px;
   text-align: center;
@@ -103,7 +103,7 @@ footer img {
 
 .conteudo h3 {
   margin-top: 30px;
-  color: #0d420f;
+  color: #000000;
 }
 
 .conteudo p {
@@ -128,7 +128,7 @@ footer img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #0d420f;
+  background-color: #000000;
   border-radius: 10px;
   text-decoration: none;
   overflow: hidden;
