@@ -1,42 +1,42 @@
-/* GERAL */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 html, body {
   height: 100%;
-  font-family: Arial, sans-serif;
-  background-color: #fdfdfd;
-  color: #333;
   display: flex;
   flex-direction: column;
 }
 
-/* CONTAINER PRINCIPAL */
 body > main {
   flex: 1;
 }
 
-/* CABEÇALHO */
+
 header {
-  background-color:#0d420f;
-  color:#ffffff;
+  background-color: #0d420f;
+  color: #ffffff;
   padding: 20px;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 header h1 {
   font-size: 1.8em;
 }
+
 .menu-toggle {
   font-size: 2em;
   cursor: pointer;
   user-select: none;
 }
+
 nav {
   position: absolute;
   top: 100%;
@@ -45,17 +45,20 @@ nav {
   border: 1px solid #ccc;
   display: none;
   flex-direction: column;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
+
 nav.ativo {
   display: flex;
 }
+
 nav a {
   padding: 12px 20px;
   color: #333;
   text-decoration: none;
   border-bottom: 1px solid #eee;
 }
+
 nav a:hover {
   background-color: #f0f0f0;
 }
@@ -63,15 +66,39 @@ nav a:hover {
 
 main {
   padding: 40px 20px;
+  font-size: 1.3em; 
+  line-height: 1.8;
 }
+
 .conteudo h2 {
   font-size: 2em;
   color: #000000;
   margin-bottom: 20px;
 }
+
 .conteudo p {
   font-size: 1.2em;
   line-height: 1.7;
+}
+
+
+.texto-imagem {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+}
+
+.texto {
+  flex: 1;
+  min-width: 280px;
+}
+
+.imagem img {
+  width: 380px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -85,20 +112,20 @@ footer {
   align-items: center;
   gap: 15px;
 }
+
 footer span {
   font-weight: bold;
 }
+
 footer img {
   width: 24px;
   height: 24px;
   vertical-align: middle;
 }
+
 footer a {
   display: inline-block;
 }
-
-
-
 
 
 .cards-container {
@@ -153,23 +180,4 @@ footer a {
   color: #333;
   padding: 10px;
   text-align: center;
-}
-
-.texto-imagem {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  flex-wrap: wrap; /* Responsivo em telas menores */
-}
-
-.texto {
-  flex: 1;
-  min-width: 280px;
-}
-
-.imagem img {
-  width: 350px;
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
