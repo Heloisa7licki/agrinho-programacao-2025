@@ -9,8 +9,8 @@
 }
 
 .card {
-  width: 200px;  /* Tamanho fixo para os cards */
-  height: 300px;  /* Tamanho fixo para os cards */
+  width: 220px;  /* Tamanho fixo para os cards */
+  height: 220px;  /* Tamanho fixo para os cards, mantendo quadrado */
   perspective: 1000px;
   margin-bottom: 40px;
 }
@@ -62,7 +62,7 @@
   font-size: 0.95em;
   color: #838383;
   margin-top: 10px;
-  max-width: 200px;  /* Ajustando para o tamanho dos cards */
+  max-width: 220px;  /* Ajustando para o tamanho dos cards */
   line-height: 1.5em;
 }
 
@@ -74,7 +74,7 @@
 
   .card {
     width: 180px;  /* Cards um pouco menores em telas médias */
-    height: 270px;  /* Ajuste a altura também */
+    height: 180px;  /* Mantendo o formato quadrado */
   }
 }
 
@@ -85,6 +85,6 @@
 
   .card {
     width: 160px;  /* Cards ainda menores em telas pequenas */
-    height: 240px;  /* Ajuste a altura também */
+    height: 160px;  /* Mantendo o formato quadrado */
   }
 }
