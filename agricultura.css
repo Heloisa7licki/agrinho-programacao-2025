@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
@@ -13,11 +14,15 @@ html, body {
   flex-direction: column;
 }
 
+
 body > .conteudo-completo {
   flex: 1;
   display: flex;
   flex-direction: row;
 }
+
+
+
 
 header {
   background-color: #000000;
@@ -70,7 +75,7 @@ nav a:hover {
 }
 
 footer {
-  background-color: #000000;
+  background-color: #252525;
   color: #fff;
   padding: 15px 20px;
   text-align: center;
@@ -89,7 +94,7 @@ footer img {
   height: 24px;
 }
 
-/* Conteúdo principal à esquerda */
+
 .conteudo-principal {
   flex: 1;
   padding: 40px 20px;
@@ -112,7 +117,6 @@ footer img {
   margin-top: 10px;
 }
 
-/* Barra lateral fixa com quadradinhos */
 .barra-lateral-agricultura {
   width: 220px;
   background-color: #f0f0f0;
@@ -123,7 +127,7 @@ footer img {
   gap: 30px;
 }
 
-/* Estilo dos quadradinhos verdes */
+
 .card-agri {
   display: flex;
   flex-direction: column;
