@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos</title>
+  <link rel="stylesheet" href="agricultura.css" />
+  <link rel="stylesheet" href="eventos.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Eventos - Do Campo à Cidade</h1>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <nav id="menu">
+      <a href="pratos.html">Pratos</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="eventos.html">Eventos</a>
+        <a href="agricultura.html">Do Campo a Cidade</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="text-align: center;">Eventos na Região</h2>
+    <div class="eventos-container">
+
+      <!-- Evento 1: AgroLeite -->
+      <div class="evento-card">
+        <h3>AgroLeite 2025</h3>
+        <p><strong>Data:</strong> 06 a 10 de agosto de 2025</p>
+        <p><strong>Local:</strong> Castro - PR</p>
+        <p><strong>Descrição:</strong> Um dos maiores eventos do setor leiteiro do Brasil. Conta com exposições, leilões, palestras e muita interação entre campo e cidade.</p>
+        <p><strong>Contato:</strong> (42) 3234-1000</p>
+      </div>
+
+      <!-- Evento 2 -->
+      <div class="evento-card">
+        <h3>Feira do Produtor Rural</h3>
+        <p><strong>Data:</strong> 20 a 22 de setembro de 2025</p>
+        <p><strong>Local:</strong> Telêmaco Borba - PR</p>
+        <p><strong>Descrição:</strong> Feira com produtores locais, venda de produtos frescos, comidas típicas e oficinas sobre agricultura familiar.</p>
+        <p><strong>Contato:</strong> (42) 3271-2345</p>
+      </div>
+
+      <!-- Evento 3 -->
+      <div class="evento-card">
+        <h3>Encontro de Agroecologia</h3>
+        <p><strong>Data:</strong> 12 de outubro de 2025</p>
+        <p><strong>Local:</strong> Ponta Grossa - PR</p>
+        <p><strong>Descrição:</strong> Evento que reúne produtores e pesquisadores para discutir práticas sustentáveis no campo. Entrada gratuita.</p>
+        <p><strong>Contato:</strong> (42) 99888-9988</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span>Desenvolvido por Heloísa Setelicki</span>
+    <a href="https://github.com/Heloisa7licki" target="_blank">
+      <img src="imagens/giht.png" alt="GitHub" />
+    </a>
+    <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank">
+      <img src="imagens/insta.png" alt="Instagram" />
+    </a>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('ativo');
+    });
+  </script>
+
+</body>
+</html>
