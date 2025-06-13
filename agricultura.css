@@ -20,7 +20,7 @@ body > .conteudo-completo {
 }
 
 header {
-  background-color: #292929;
+  background-color: #131313;
   color: #fff;
   padding: 20px;
   position: relative;
@@ -70,7 +70,7 @@ nav a:hover {
 }
 
 footer {
-  background-color: #292929;
+  background-color: #141414;
   color: #fff;
   padding: 15px 20px;
   text-align: center;
@@ -127,7 +127,7 @@ footer img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #292929;
+  background-color: #252525;
   border-radius: 10px;
   text-decoration: none;
   overflow: hidden;
