@@ -1,139 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
 
-    html, body {
-      height: 100%;
-      font-family: Arial, sans-serif;
-      background-color: #fdfdfd;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-    }
+body > .conteudo-completo {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
 
-    header {
-      background-color: #000;
-      color: #fff;
-      padding: 20px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      z-index: 10;
-    }
+header {
+  background-color: #0d420f;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
 
-    header h1 {
-      font-size: 1.8em;
-    }
+header h1 {
+  font-size: 1.8em;
+  margin: 0;
+}
 
-    .menu-toggle {
-      font-size: 2em;
-      cursor: pointer;
-      position: absolute;
-      right: 20px;
-    }
+.menu-toggle {
+  font-size: 2em;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  right: 20px;
+}
 
-    nav {
-      position: absolute;
-      top: 100%;
-      right: 20px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      display: none;
-      flex-direction: column;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      z-index: 100;
-    }
+nav {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 
-    nav.ativo {
-      display: flex;
-    }
+nav.ativo {
+  display: flex;
+}
 
-    nav a {
-      padding: 12px 20px;
-      color: #333;
-      text-decoration: none;
-      border-bottom: 1px solid #eee;
-    }
+nav a {
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
 
-    nav a:hover {
-      background-color: #f0f0f0;
-    }
+nav a:hover {
+  background-color: #f0f0f0;
+}
 
-    main {
-      flex: 1;
-      padding: 30px;
-    }
+footer {
+  background-color: #0d420f;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
 
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      justify-items: center;
-    }
+footer span {
+  font-weight: bold;
+}
 
-    .card {
-      width: 220px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+footer img {
+  width: 24px;
+  height: 24px;
+}
 
-    .card img {
-      width: 220px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
+/* Conteúdo principal à esquerda */
+.conteudo-principal {
+  flex: 1;
+  padding: 40px 20px;
+}
 
-    .card img:hover {
-      transform: scale(1.05);
-    }
+.conteudo h2 {
+  font-size: 2em;
+  color: #000;
+  margin-bottom: 20px;
+}
 
-    .descricao {
-      margin-top: 10px;
-      font-size: 0.95em;
-      color: #555;
-      line-height: 1.4em;
-    }
+.conteudo h3 {
+  margin-top: 30px;
+  color: #0d420f;
+}
 
-    footer {
-      background-color: #252525;
-      color: #fff;
-      padding: 15px 20px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-    }
+.conteudo p {
+  font-size: 1.2em;
+  line-height: 1.7;
+  margin-top: 10px;
+}
 
-    footer span {
-      font-weight: bold;
-    }
+/* Barra lateral fixa com quadradinhos */
+.barra-lateral-agricultura {
+  width: 220px;
+  background-color: #f3fdf1;
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
 
-    footer img {
-      width: 24px;
-      height: 24px;
-    }
+/* Estilo dos quadradinhos verdes */
+.card-agri {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0d420f;
+  border-radius: 10px;
+  text-decoration: none;
+  overflow: hidden;
+  width: 160px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-    @media (max-width: 768px) {
-      .cards-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+.card-agri:hover {
+  transform: scale(1.05);
+}
 
-    @media (max-width: 480px) {
-      .cards-container {
-        grid-template-columns: 1fr;
-      }
-    }
-  
+.card-agri img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.card-agri span {
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  body > .conteudo-completo {
+    flex-direction: column;
+  }
+
+  .barra-lateral-agricultura {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .card-agri {
+    width: 140px;
+  }
+}
