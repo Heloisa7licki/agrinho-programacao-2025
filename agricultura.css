@@ -20,7 +20,7 @@ body > .conteudo-completo {
 }
 
 header {
-  background-color: #0d420f;
+  background-color: #292929;
   color: #fff;
   padding: 20px;
   position: relative;
@@ -70,7 +70,7 @@ nav a:hover {
 }
 
 footer {
-  background-color: #0d420f;
+  background-color: #292929;
   color: #fff;
   padding: 15px 20px;
   text-align: center;
@@ -103,7 +103,7 @@ footer img {
 
 .conteudo h3 {
   margin-top: 30px;
-  color: #0d420f;
+  color: #292929;
 }
 
 .conteudo p {
@@ -112,10 +112,9 @@ footer img {
   margin-top: 10px;
 }
 
-/* Barra lateral fixa com quadradinhos */
 .barra-lateral-agricultura {
   width: 220px;
-  background-color: #f3fdf1;
+  background-color: #e3e3e3;
   padding: 30px 10px;
   display: flex;
   flex-direction: column;
@@ -123,12 +122,12 @@ footer img {
   gap: 30px;
 }
 
-/* Estilo dos quadradinhos verdes */
+
 .card-agri {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #0d420f;
+  background-color: #292929;
   border-radius: 10px;
   text-decoration: none;
   overflow: hidden;
@@ -156,7 +155,6 @@ footer img {
   font-size: 1.1em;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   body > .conteudo-completo {
     flex-direction: column;
