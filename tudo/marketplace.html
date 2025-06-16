@@ -514,9 +514,15 @@
       const card = document.createElement('div');
       card.className = 'card';
       card.innerHTML = 
-        <img src="${img}" alt="${nome}" />
-        <p class="descricao">${desc}</p>
-        <button class="contact-btn" data-whatsapp="55${contato.replace(/\\D/g,'')}">Entrar em Contato</button>
+    
+const contatoLimpo = contato.replace(/\D/g, ''); 
+
+const cardHtml = `
+  <img src="${img}" alt="${nome}" />
+  <p class="descricao">${desc}</p>
+  <button class="contact-btn" data-whatsapp="55${contatoLimpo}">Entrar em Contato</button>
+`;
+
       ;
       cardsContainer.prepend(card);
       modal.classList.remove('ativo');
@@ -525,5 +531,3 @@
   </script>
 </body>
 </html>
-
-
