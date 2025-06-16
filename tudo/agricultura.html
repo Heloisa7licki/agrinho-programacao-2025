@@ -38,7 +38,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
       box-shadow: 0 2px 10px rgba(0,0,0,.2);
       z-index: 10;
     }
@@ -84,18 +83,10 @@
       background: #f1f8f5;
     }
 
-    .conteudo-completo {
-      flex: 1;
-      display: flex;
-      gap: 30px;
-      padding: 40px 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
     main.conteudo-principal {
-      flex: 3;
       max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     main.conteudo-principal h2 {
@@ -122,47 +113,6 @@
     }
     main.conteudo-principal p small a:hover {
       text-decoration: underline;
-    }
-
-    aside.barra-lateral-agricultura {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .card-agri {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: var(--text);
-      background: #f9f9f9;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      width: 160px;
-      padding: 15px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card-agri:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,.15);
-    }
-
-    .card-agri img {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      margin-bottom: 10px;
-    }
-
-    .card-agri span {
-      font-weight: 600;
-      font-size: 1.1rem;
-      text-align: center;
     }
 
     footer {
@@ -193,24 +143,6 @@
     }
 
     /* Responsividade */
-    @media (max-width: 1024px) {
-      .conteudo-completo {
-        flex-direction: column;
-        padding: 30px 20px;
-      }
-
-      aside.barra-lateral-agricultura {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .card-agri {
-        width: 140px;
-        margin: 10px;
-      }
-    }
-
     @media (max-width: 480px) {
       header h1 {
         font-size: 1.4rem;
@@ -240,57 +172,50 @@
     </nav>
   </header>
 
-  <div class="conteudo-completo">
-    <main class="conteudo-principal">
-      <section class="conteudo">
-        <h2>Objetivo do Site</h2>
-        <p>
-          O objetivo do site <strong>Do Campo à Cidade</strong> é promover a união entre o campo e a cidade, trazendo informações, receitas, marketplace e notícias que conectam esses dois mundos essenciais. Aqui você encontra conteúdos que valorizam a produção rural e o comércio local, fortalecendo essa importante conexão.
-        </p>
+  <main class="conteudo-principal">
+    <section class="conteudo">
+      <h2>Objetivo do Site</h2>
+      <p>
+        O objetivo do site <strong>Do Campo à Cidade</strong> é promover a união entre o campo e a cidade, trazendo informações, receitas, marketplace e notícias que conectam esses dois mundos essenciais. Aqui você encontra conteúdos que valorizam a produção rural e o comércio local, fortalecendo essa importante conexão.
+      </p>
 
-        <h2>Onde o Campo Encontra a Cidade</h2>
+      <h2>Onde o Campo Encontra a Cidade</h2>
 
-        <h3>A Importância da Cidade</h3>
-        <p>
-          A cidade é o centro da vida moderna, onde a inovação, o comércio e a cultura se encontram para impulsionar o desenvolvimento social e econômico. É nas cidades que as pessoas têm acesso a serviços essenciais, educação, saúde e oportunidades de trabalho. Elas são polos de conexão, criatividade e transformação, moldando o futuro da sociedade.
-        </p>
+      <h3>A Importância da Cidade</h3>
+      <p>
+        A cidade é o centro da vida moderna, onde a inovação, o comércio e a cultura se encontram para impulsionar o desenvolvimento social e econômico. É nas cidades que as pessoas têm acesso a serviços essenciais, educação, saúde e oportunidades de trabalho. Elas são polos de conexão, criatividade e transformação, moldando o futuro da sociedade.
+      </p>
 
-        <h3>A Importância do Campo</h3>
-        <p>
-          O campo representa a base da nossa existência, onde a natureza se manifesta em sua forma mais pura. É no sítio e nas áreas rurais que se produz o alimento que abastece as cidades, além de preservar o meio ambiente e oferecer um estilo de vida mais tranquilo e saudável. O campo é vital para a sustentabilidade, a conservação dos recursos naturais e a manutenção das tradições culturais.
-        </p>
+      <h3>A Importância do Campo</h3>
+      <p>
+        O campo representa a base da nossa existência, onde a natureza se manifesta em sua forma mais pura. É no sítio e nas áreas rurais que se produz o alimento que abastece as cidades, além de preservar o meio ambiente e oferecer um estilo de vida mais tranquilo e saudável. O campo é vital para a sustentabilidade, a conservação dos recursos naturais e a manutenção das tradições culturais.
+      </p>
 
-        <h3>A União Entre Campo e Cidade</h3>
-        <p>
-          A verdadeira força está na união entre campo e cidade. Essa conexão possibilita um fluxo contínuo de recursos, conhecimentos e valores, garantindo que as cidades sejam abastecidas com produtos frescos e que o campo receba investimentos e atenção para se desenvolver de forma sustentável. Quando o campo encontra a cidade, criamos um equilíbrio essencial para o bem-estar coletivo, integrando progresso urbano com respeito à natureza e às nossas raízes.
-        </p>
+      <h3>A União Entre Campo e Cidade</h3>
+      <p>
+        A verdadeira força está na união entre campo e cidade. Essa conexão possibilita um fluxo contínuo de recursos, conhecimentos e valores, garantindo que as cidades sejam abastecidas com produtos frescos e que o campo receba investimentos e atenção para se desenvolver de forma sustentável. Quando o campo encontra a cidade, criamos um equilíbrio essencial para o bem-estar coletivo, integrando progresso urbano com respeito à natureza e às nossas raízes.
+      </p>
 
-        <p><small>Fonte: Texto autoral baseado no site <a href="https://meuartigo.brasilescola.uol.com.br/geografia/as-relacoes-entre-cidade-campo.htm" target="_blank" rel="noopener noreferrer">Meu Artigo Brasil Escola</a></small></p>
-      </section>
-    </main>
-
-    <aside class="barra-lateral-agricultura">
-      <a href="pratos.html" class="card-agri">
-        <img src="imagens/WhatsApp Image 2025-06-12 at 20.12.55 (1).jpeg" alt="Pratos" />
-        <span>Pratos</span>
-      </a>
-      <a href="marketplace.html" class="card-agri">
-        <img src="imagens/WhatsApp Image 2025-06-12 at 20.12.54.jpeg" alt="Marketplace" />
-        <span>Marketplace</span>
-      </a>
-      <a href="eventos.html" class="card-agri">
-        <img src="imagens/WhatsApp Image 2025-06-12 at 20.12.54 (1).jpeg" alt="Eventos" />
-        <span>Eventos</span>
-      </a>
-      <a href="noticias.html" class="card-agri">
-        <img src="imagens/WhatsApp Image 2025-06-12 at 20.12.55.jpeg" alt="Notícias" />
-        <span>Notícias</span>
-      </a>
-    </aside>
-  </div>
+      <p><small>Fonte: Texto autoral baseado no site <a href="https://meuartigo.brasilescola.uol.com.br/geografia/as-relacoes-entre-cidade-campo.htm" target="_blank" rel="noopener noreferrer">Meu Artigo Brasil Escola</a></small></p>
+    </section>
+  </main>
 
   <footer>
     <span>Desenvolvido por Heloísa Setelicki</span>
-    <a href="https://github.com/Heloisa7licki" target="_blank" rel="noopener noreferrer">
-      <img src="imagensrecita/giht.png" alt="GitHub" />
+    <a href="imagensrecita/giht.png" target="_blank" rel="noopener noreferrer">
+      <img src="imagens/giht.png" alt="GitHub" />
     </a>
+    <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank" rel="noopener noreferrer">
+      <img src="imagensrecita/icone-do-instagram_768467-672.avif" alt="Instagram" />
+    </a>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('ativo');
+    });
+  </script>
+</body>
+</html>
