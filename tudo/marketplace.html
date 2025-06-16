@@ -3,88 +3,525 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marketplace</title>
-  <link rel="stylesheet" href="agricultura.css" />
-  <link rel="stylesheet" href="marketplace.css" />
+  <title>Marketplace - Do Campo à Cidade</title>
+
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:       #2e7d32;
+      --primary-dark:  #1b5e20;
+      --accent:        #ffffff;
+      --text:          #263238;
+      --radius:        12px;
+      --shadow:        0 4px 14px rgba(0,0,0,.1);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    html,body{
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      font-family:'Poppins',sans-serif;
+      background:var(--accent);
+      color:var(--text);
+    }
+
+    
+    header{
+      background:var(--primary-dark);
+      color:#fff;
+      padding:20px;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:30px;
+      box-shadow:0 2px 10px rgba(0,0,0,.2);
+      z-index:10;
+    }
+    header h1{font-size:1.8rem;letter-spacing:.5px;}
+    .menu-toggle{
+      font-size:2rem;
+      cursor:pointer;
+      position:absolute;
+      right:20px;
+    }
+
+    nav{
+      position:absolute;
+      top:100%;
+      right:20px;
+      background:#fff;
+      border:1px solid #c8e6c9;
+      display:none;
+      flex-direction:column;
+      box-shadow:var(--shadow);
+      z-index:100;
+      border-radius:var(--radius);
+    }
+    nav.ativo{display:flex;}
+    nav a{
+      padding:12px 20px;
+      color:var(--text);
+      text-decoration:none;
+      border-bottom:1px solid #e0e0e0;
+      transition:background .3s;
+      font-weight:500;
+    }
+    nav a:hover{background:#f1f8f5;}
+
+   
+    .search-bar{
+      max-width:800px;
+      margin:25px auto 0;
+      padding:0 15px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .search-bar input{
+      flex:1 1 260px;
+      padding:12px 16px;
+      border:2px solid #a5d6a7;
+      border-radius:var(--radius);
+      font-size:1rem;
+      outline:none;
+      transition:border .3s;
+    }
+    .search-bar input:focus{border-color:var(--primary);}
+    .btn-add{
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      padding:12px 20px;
+      border-radius:var(--radius);
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      transition:background .3s, transform .2s;
+      font-weight:600;
+    }
+    .btn-add:hover{background:var(--primary-dark);transform:translateY(-2px);}
+
+    
+    main{flex:1;padding:40px 30px;}
+    .cards-container{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:40px;
+    }
+    .card{
+      width:220px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      transition:transform .3s, box-shadow .3s;
+    }
+    .card img{
+      width:220px;
+      height:160px;
+      object-fit:cover;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .card:hover{
+      transform:translateY(-6px) scale(1.03);
+      box-shadow:0 8px 20px rgba(0,0,0,.15);
+    }
+    .descricao{margin-top:10px;font-size:0.93rem;color:#455a64;line-height:1.4em;}
+    .contact-btn{
+      margin-top:10px;
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      padding:8px 14px;
+      border-radius:var(--radius);
+      cursor:pointer;
+      font-size:0.85rem;
+      transition:background .3s;
+    }
+    .contact-btn:hover{background:var(--primary-dark);}
+    .card.hidden{display:none;}
+
+    
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.55);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:200;
+    }
+    .modal.ativo{display:flex;}
+    .modal-content{
+      background:#fff;
+      padding:30px 25px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      width:90%;
+      max-width:420px;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .modal-content h2{font-size:1.4rem;margin-bottom:6px;color:var(--primary-dark);}
+    .modal-content input,
+    .modal-content textarea{
+      width:100%;
+      padding:10px 14px;
+      border:2px solid #a5d6a7;
+      border-radius:var(--radius);
+      font-size:0.95rem;
+      resize:none;
+    }
+    .modal-content textarea{min-height:90px;}
+    .modal-content button{
+      align-self:flex-end;
+      background:var(--primary);
+      color:#fff;
+      border:none;
+      padding:10px 18px;
+      border-radius:var(--radius);
+      font-weight:600;
+      cursor:pointer;
+    }
+    .close{
+      position:absolute;
+      top:10px;
+      right:14px;
+      font-size:1.6rem;
+      cursor:pointer;
+      color:#888;
+    }
+
+    
+    footer{
+      background:#1b5e20;
+      color:#fff;
+      padding:18px 20px;
+      text-align:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:18px;
+    }
+    footer span{font-weight:600;}
+    footer img{width:24px;height:24px;filter:brightness(0) invert(1);}
+
+    
+    @media(max-width:1024px){.cards-container{gap:30px;}}
+    @media(max-width:768px){.cards-container{flex-direction:column;align-items:center;}}
+  </style>
 </head>
 <body>
-
+  
   <header>
-    <h1>Marketplace Rural - Do Campo à Cidade</h1>
+    <h1>Marketplace - Do Campo à Cidade</h1>
     <div class="menu-toggle" id="menuToggle">☰</div>
     <nav id="menu">
-      <a href="receitas/pratos.html">Pratos</a>
-      <a href="marketplace.html">Marketplace</a>
+      <a href="pratos.html">Receitas</a>
       <a href="eventos.html">Eventos</a>
-       <a href="agricultura.html">Do Campo a Cidade</a>
+      <a href="agricultura.html">Do Campo à Cidade</a>
     </nav>
   </header>
 
-  <main>
-    <h2 style="text-align: center;">Marketplace Rural</h2>
-    <div class="cards-container">
+  
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Pesquisar produto..." />
+    <button id="addProductBtn" class="btn-add">+ Publicar Produto</button>
+  </div>
 
+  
+  <main>
+    <div class="cards-container" id="cardsContainer">
+
+      
+      <div class="card">
+        <img src="imagensrecita/1.jpg" alt="Pão Caseiro" />
+        <p class="descricao">Pão Caseiro</p>
+        <button class="contact-btn" data-whatsapp="5542999990001">Entrar em Contato</button>
+      </div>
+      
+      <div class="card">
+        <img src="imagensrecita/2.jpg" alt="Trator Massey Ferguson 275" />
+        <p class="descricao">Trator Massey Ferguson 275</p>
+        <button class="contact-btn" data-whatsapp="5541999887766">Entrar em Contato</button>
+      </div>
+      
+      <div class="card">
+        <img src="imagensrecita/3.webp" alt="Sementes de Milho Híbrido" />
+        <p class="descricao">Sementes de Milho Híbrido</p>
+        <button class="contact-btn" data-whatsapp="5543991234567">Entrar em Contato</button>
+      </div>
+      
+      <div class="card">
+        <img src="imagensrecita/4.jpg" alt="Fertilizante NPK 20-20-20" />
+        <p class="descricao">Fertilizante NPK 20‑20‑20</p>
+        <button class="contact-btn" data-whatsapp="5543997654321">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/5.webp" alt="Enxada Tramontina" />
+        <p class="descricao">Enxada Tramontina</p>
+        <button class="contact-btn" data-whatsapp="5542987654321">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/6.jpg" alt="Carrinho de Mão Reforçado" />
+        <p class="descricao">Carrinho de Mão Reforçado</p>
+        <button class="contact-btn" data-whatsapp="5542998888777">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/7.jpg" alt="Roçadeira Costal Husqvarna 143R" />
+        <p class="descricao">Roçadeira Husqvarna 143R</p>
+        <button class="contact-btn" data-whatsapp="5542997777666">Entrar em Contato</button>
+      </div>
+
+      <div class="card">
+        <img src="imagensrecita/8.webp" alt="Arado de Disco Baldan" />
+        <p class="descricao">Arado de Disco Baldan</p>
+        <button class="contact-btn" data-whatsapp="5542988888000">Entrar em Contato</button>
+      </div>
    
       <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="placeholder-text">Pão</div>
-          </div>
-          <div class="card-back">
-            <p><strong>Nome:</strong> Dona Maria do Pão</p>
-            <p><strong>Produto:</strong> Pão caseiro de milho</p>
-            <p><strong>Telefone:</strong> (42) 99999-1234</p>
-            <p><strong>Local:</strong> Bairro Rural São Pedro</p>
-          </div>
-        </div>
+        <img src="imagensrecita/9.webp" alt="Pulverizador Costal 20 L" />
+        <p class="descricao">Pulverizador Costal 20 L</p>
+        <button class="contact-btn" data-whatsapp="5542977777555">Entrar em Contato</button>
       </div>
 
+      <div class="card">
+        <img src="imagensrecita/10.webp" alt="Queijo Colonial Artesanal" />
+        <p class="descricao">Queijo Colonial Artesanal</p>
+        <button class="contact-btn" data-whatsapp="554295551234">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/11.avif" alt="Mel Puro de Abelha" />
+        <p class="descricao">Mel Puro de Abelha</p>
+        <button class="contact-btn" data-whatsapp="554296661234">Entrar em Contato</button>
+      </div>
+    
+      <div class="card">
+        <img src="imagensrecita/12.webp" alt="Café em Grãos Torrado" />
+        <p class="descricao">Café em Grãos Torrado</p>
+        <button class="contact-btn" data-whatsapp="554297771234">Entrar em Contato</button>
+      </div>
       
       <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="placeholder-text">Pamonha</div>
-          </div>
-          <div class="card-back">
-            <p><strong>Nome:</strong> Seu João da Pamonha</p>
-            <p><strong>Produto:</strong> Pamonha doce e salgada</p>
-            <p><strong>Telefone:</strong> (42) 98888-4567</p>
-            <p><strong>Local:</strong> Estrada da Colônia Esperança</p>
-          </div>
-        </div>
+        <img src="imagensrecita/13.webp" alt="Doce de Leite Artesanal" />
+        <p class="descricao">Doce de Leite Artesanal</p>
+        <button class="contact-btn" data-whatsapp="554298881234">Entrar em Contato</button>
       </div>
 
+      <div class="card">
+        <img src="imagensrecita/14.jpg" alt="Mudas de Eucalipto" />
+        <p class="descricao">Mudas de Eucalipto</p>
+        <button class="contact-btn" data-whatsapp="554291231234">Entrar em Contato</button>
+      </div>
       
       <div class="card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="placeholder-text">Doce</div>
-          </div>
-          <div class="card-back">
-            <p><strong>Nome:</strong> Ana do Doce</p>
-            <p><strong>Produto:</strong> Doce de leite e cocada</p>
-            <p><strong>Telefone:</strong> (42) 97777-7890</p>
-            <p><strong>Local:</strong> Sítio Santa Luzia</p>
-          </div>
-        </div>
+        <img src="imagensrecita/15.jpg" alt="Mudas de Tomate Cereja" />
+        <p class="descricao">Mudas de Tomate Cereja</p>
+        <button class="contact-btn" data-whatsapp="554292221234">Entrar em Contato</button>
+      </div>
+    
+      <div class="card">
+        <img src="imagensrecita/16.webp" alt="Alpiste para Aves 5 kg" />
+        <p class="descricao">Alpiste para Aves 5 kg</p>
+        <button class="contact-btn" data-whatsapp="554293331234">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/17.jpg" alt="Ração para Gado 40 kg" />
+        <p class="descricao">Ração para Gado 40 kg</p>
+        <button class="contact-btn" data-whatsapp="554294441234">Entrar em Contato</button>
+      </div>
+   
+      <div class="card">
+        <img src="imagensrecita/188.webp" alt="Leite Fresco Integral 1 L" />
+        <p class="descricao">Leite Fresco Integral 1 L</p>
+        <button class="contact-btn" data-whatsapp="554295551235">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/19.jpg" alt="Ovos Caipira (dúzia)" />
+        <p class="descricao">Ovos Caipira (dúzia)</p>
+        <button class="contact-btn" data-whatsapp="554296661235">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/20.jpeg" alt="Farinha de Mandioca 1 kg" />
+        <p class="descricao">Farinha de Mandioca 1 kg</p>
+        <button class="contact-btn" data-whatsapp="554297771235">Entrar em Contato</button>
+      </div>
+      
+      <div class="card">
+        <img src="imagensrecita/21.jpg" alt="Amendoim Torrado 500 g" />
+        <p class="descricao">Amendoim Torrado 500 g</p>
+        <button class="contact-btn" data-whatsapp="554298881235">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/22.jpg" alt="Geleia de Morango Artesanal" />
+        <p class="descricao">Geleia de Morango Artesanal</p>
+        <button class="contact-btn" data-whatsapp="554291231235">Entrar em Contato</button>
+      </div>
+  
+      <div class="card">
+        <img src="imagensrecita/23.jpg" alt="Abóbora Cabotiá (unidade)" />
+        <p class="descricao">Abóbora Cabotiá (unidade)</p>
+        <button class="contact-btn" data-whatsapp="554292221235">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/24.webp" alt="Laranja Pera (saco 20 kg)" />
+        <p class="descricao">Laranja Pera (20 kg)</p>
+        <button class="contact-btn" data-whatsapp="554293331235">Entrar em Contato</button>
+      </div>
+
+      <div class="card">
+        <img src="imagensrecita/25.webp" alt="Melancia Orgânica" />
+        <p class="descricao">Melancia Orgânica</p>
+        <button class="contact-btn" data-whatsapp="554294441235">Entrar em Contato</button>
+      </div>
+      
+      <div class="card">
+        <img src="imagensrecita/26.jpg" alt="Manteiga de Garrafa 500 ml" />
+        <p class="descricao">Manteiga de Garrafa 500 ml</p>
+        <button class="contact-btn" data-whatsapp="554295551236">Entrar em Contato</button>
+      </div>
+
+      <div class="card">
+        <img src="imagensrecita/27.jpg" alt="Cordeiro Vivo para Abate" />
+        <p class="descricao">Cordeiro Vivo</p>
+        <button class="contact-btn" data-whatsapp="554296661236">Entrar em Contato</button>
+      </div>
+  
+      <div class="card">
+        <img src="imagensrecita/28.jpg" alt="Feno em Fardos" />
+        <p class="descricao">Feno em Fardos</p>
+        <button class="contact-btn" data-whatsapp="554297771236">Entrar em Contato</button>
+      </div>
+    
+      <div class="card">
+        <img src="imagensrecita/29.webp" alt="Carreta Agrícola 4 t" />
+        <p class="descricao">Carreta Agrícola 4 t</p>
+        <button class="contact-btn" data-whatsapp="554298881236">Entrar em Contato</button>
+      </div>
+    
+      <div class="card">
+        <img src="imagensrecita/30.jpg" alt="Irrigador de Aspersão 360°" />
+        <p class="descricao">Irrigador de Aspersão 360°</p>
+        <button class="contact-btn" data-whatsapp="554291231236">Entrar em Contato</button>
+      </div>
+      
+      <div class="card">
+        <img src="imagensrecita/31.jpg" alt="Mangueira de Irrigação 1 pol 50 m" />
+        <p class="descricao">Mangueira de Irrigação 1” 50 m</p>
+        <button class="contact-btn" data-whatsapp="554292221236">Entrar em Contato</button>
+      </div>
+     
+      <div class="card">
+        <img src="imagensrecita/32.jpg" alt="Motosserra Stihl MS 170" />
+        <p class="descricao">Motosserra Stihl MS 170</p>
+        <button class="contact-btn" data-whatsapp="554293331236">Entrar em Contato</button>
       </div>
 
     </div>
   </main>
 
+  
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Publicar Novo Produto</h2>
+      <form id="productForm">
+        <input type="text" id="prodName" placeholder="Nome do Produto" required />
+        <input type="url" id="prodImg" placeholder="URL da Imagem" required />
+        <textarea id="prodDesc" placeholder="Descrição" required></textarea>
+        <input type="tel" id="prodContact" placeholder="WhatsApp (somente números)" required />
+        <button type="submit">Publicar</button>
+      </form>
+    </div>
+  </div>
+
+ 
   <footer>
     <span>Desenvolvido por Heloísa Setelicki</span>
-    <a href="https://github.com/Heloisa7licki" target="_blank"><img src="imagens/giht.png" alt="GitHub" /></a>
-    <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank"><img src="imagens/insta.png" alt="Instagram" /></a>
+    <a href="https://github.com/Heloisa7licki" target="_blank">
+      <img src="imagensrecita/giht.png" alt="GitHub" />
+    </a>
+    <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank">
+      <img src="imagensrecita/icone-do-instagram_768467-672.avif" alt="Instagram" />
+    </a>
   </footer>
 
+
   <script>
+    
     const toggle = document.getElementById('menuToggle');
-    const menu = document.getElementById('menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('ativo');
+    const menu   = document.getElementById('menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('ativo'));
+
+  
+    const searchInput    = document.getElementById('searchInput');
+    const cardsContainer = document.getElementById('cardsContainer');
+
+    searchInput.addEventListener('input', () => {
+      const termo = searchInput.value.toLowerCase();
+      const cards = cardsContainer.querySelectorAll('.card');
+      cards.forEach(card => {
+        const texto = card.innerText.toLowerCase();
+        card.classList.toggle('hidden', !texto.includes(termo));
+      });
+    });
+
+    
+    cardsContainer.addEventListener('click', e => {
+      if (e.target.classList.contains('contact-btn')) {
+        const numero = e.target.dataset.whatsapp;
+        window.open(`https://wa.me/${numero}`, '_blank');
+      }
+    });
+
+    
+    const addBtn     = document.getElementById('addProductBtn');
+    const modal      = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+    const prodForm   = document.getElementById('productForm');
+
+    addBtn.addEventListener('click', () => modal.classList.add('ativo'));
+    closeModal.addEventListener('click', () => modal.classList.remove('ativo'));
+    window.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('ativo'); });
+
+  
+    prodForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const nome    = document.getElementById('prodName').value.trim();
+      const img     = document.getElementById('prodImg').value.trim();
+      const desc    = document.getElementById('prodDesc').value.trim();
+      const contato = document.getElementById('prodContact').value.trim();
+      if (!nome || !img || !desc || !contato) return;
+
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${img}" alt="${nome}" />
+        <p class="descricao">${desc}</p>
+        <button class="contact-btn" data-whatsapp="55${contato.replace(/\\D/g,'')}">Entrar em Contato</button>
+      `;
+      cardsContainer.prepend(card);
+      modal.classList.remove('ativo');
+      prodForm.reset();
     });
   </script>
-
 </body>
 </html>
