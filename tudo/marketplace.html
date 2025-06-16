@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marketplace - Do Campo à Cidade</title>
 
- 
+  <!-- Fonte Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
   <style>
@@ -29,7 +29,7 @@
       color:var(--text);
     }
 
-    
+    /* ===== Header & Menu ===== */
     header{
       background:var(--primary-dark);
       color:#fff;
@@ -73,7 +73,7 @@
     }
     nav a:hover{background:#f1f8f5;}
 
-   
+    /* ===== Search & Add ===== */
     .search-bar{
       max-width:800px;
       margin:25px auto 0;
@@ -106,7 +106,7 @@
     }
     .btn-add:hover{background:var(--primary-dark);transform:translateY(-2px);}
 
-    
+    /* ===== Cards ===== */
     main{flex:1;padding:40px 30px;}
     .cards-container{
       display:flex;
@@ -148,7 +148,7 @@
     .contact-btn:hover{background:var(--primary-dark);}
     .card.hidden{display:none;}
 
-    
+    /* ===== Modal ===== */
     .modal{
       position:fixed;
       inset:0;
@@ -201,7 +201,7 @@
       color:#888;
     }
 
-    
+    /* ===== Footer ===== */
     footer{
       background:#1b5e20;
       color:#fff;
@@ -215,7 +215,7 @@
     footer span{font-weight:600;}
     footer img{width:24px;height:24px;filter:brightness(0) invert(1);}
 
-    
+    /* ===== Responsive ===== */
     @media(max-width:1024px){.cards-container{gap:30px;}}
     @media(max-width:768px){.cards-container{flex-direction:column;align-items:center;}}
   </style>
@@ -237,9 +237,7 @@
     <input type="text" id="searchInput" placeholder="Pesquisar produto..." />
     <button id="addProductBtn" class="btn-add">+ Publicar Produto</button>
   </div>
-
-  
-  <main>
+<main>
     <div class="cards-container" id="cardsContainer">
 
       
@@ -438,6 +436,7 @@
     </div>
   </main>
 
+
   
   <div class="modal" id="modal">
     <div class="modal-content">
@@ -453,7 +452,7 @@
     </div>
   </div>
 
- 
+  
   <footer>
     <span>Desenvolvido por Heloísa Setelicki</span>
     <a href="https://github.com/Heloisa7licki" target="_blank">
@@ -464,14 +463,13 @@
     </a>
   </footer>
 
-
+  
   <script>
-    
+
     const toggle = document.getElementById('menuToggle');
     const menu   = document.getElementById('menu');
     toggle.addEventListener('click', () => menu.classList.toggle('ativo'));
 
-  
     const searchInput    = document.getElementById('searchInput');
     const cardsContainer = document.getElementById('cardsContainer');
 
@@ -484,15 +482,15 @@
       });
     });
 
-    
+
     cardsContainer.addEventListener('click', e => {
       if (e.target.classList.contains('contact-btn')) {
         const numero = e.target.dataset.whatsapp;
-        window.open(https://wa.me/${numero}, '_blank');
+        window.open(`https://wa.me/${numero}`, '_blank');
       }
     });
 
-    
+
     const addBtn     = document.getElementById('addProductBtn');
     const modal      = document.getElementById('modal');
     const closeModal = document.getElementById('closeModal');
@@ -502,7 +500,7 @@
     closeModal.addEventListener('click', () => modal.classList.remove('ativo'));
     window.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('ativo'); });
 
-  
+   
     prodForm.addEventListener('submit', e => {
       e.preventDefault();
       const nome    = document.getElementById('prodName').value.trim();
@@ -513,17 +511,11 @@
 
       const card = document.createElement('div');
       card.className = 'card';
-      card.innerHTML = 
-    
-const contatoLimpo = contato.replace(/\D/g, ''); 
-
-const cardHtml = `
-  <img src="${img}" alt="${nome}" />
-  <p class="descricao">${desc}</p>
-  <button class="contact-btn" data-whatsapp="55${contatoLimpo}">Entrar em Contato</button>
-`;
-
-      ;
+      card.innerHTML = `
+        <img src="${img}" alt="${nome}" />
+        <p class="descricao">${desc}</p>
+        <button class="contact-btn" data-whatsapp="55${contato.replace(/\\D/g,'')}">Entrar em Contato</button>
+      `;
       cardsContainer.prepend(card);
       modal.classList.remove('ativo');
       prodForm.reset();
