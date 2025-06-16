@@ -4,7 +4,228 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Do Campo à Cidade</title>
-  <link rel="stylesheet" href="agricultura.css" />
+
+  <style>
+    :root {
+      --primary:       #2e7d32;
+      --primary-dark:  #1b5e20;
+      --accent:        #ffffff;
+      --text:          #263238;
+      --radius:        12px;
+      --shadow:        0 4px 14px rgba(0,0,0,.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      background: var(--accent);
+      color: var(--text);
+    }
+
+    header {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.2);
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .menu-toggle {
+      font-size: 2rem;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      right: 20px;
+      background: #fff;
+      border: 1px solid #c8e6c9;
+      display: none;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+      z-index: 100;
+      border-radius: var(--radius);
+    }
+
+    nav.ativo {
+      display: flex;
+    }
+
+    nav a {
+      padding: 12px 20px;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid #e0e0e0;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #f1f8f5;
+    }
+
+    .conteudo-completo {
+      flex: 1;
+      display: flex;
+      gap: 30px;
+      padding: 40px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    main.conteudo-principal {
+      flex: 3;
+      max-width: 800px;
+    }
+
+    main.conteudo-principal h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    main.conteudo-principal h3 {
+      margin-top: 25px;
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+
+    main.conteudo-principal p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #455a64;
+    }
+
+    main.conteudo-principal p small a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    main.conteudo-principal p small a:hover {
+      text-decoration: underline;
+    }
+
+    aside.barra-lateral-agricultura {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .card-agri {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text);
+      background: #f9f9f9;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 160px;
+      padding: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card-agri:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    }
+
+    .card-agri img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+    }
+
+    .card-agri span {
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 18px 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    footer span {
+      font-weight: 600;
+    }
+
+    footer a img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s;
+    }
+
+    footer a:hover img {
+      filter: brightness(0.7) invert(1);
+    }
+
+    /* Responsividade */
+    @media (max-width: 1024px) {
+      .conteudo-completo {
+        flex-direction: column;
+        padding: 30px 20px;
+      }
+
+      aside.barra-lateral-agricultura {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .card-agri {
+        width: 140px;
+        margin: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+
+      .menu-toggle {
+        font-size: 1.6rem;
+        right: 15px;
+      }
+
+      nav {
+        right: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -22,6 +243,11 @@
   <div class="conteudo-completo">
     <main class="conteudo-principal">
       <section class="conteudo">
+        <h2>Objetivo do Site</h2>
+        <p>
+          O objetivo do site <strong>Do Campo à Cidade</strong> é promover a união entre o campo e a cidade, trazendo informações, receitas, marketplace e notícias que conectam esses dois mundos essenciais. Aqui você encontra conteúdos que valorizam a produção rural e o comércio local, fortalecendo essa importante conexão.
+        </p>
+
         <h2>Onde o Campo Encontra a Cidade</h2>
 
         <h3>A Importância da Cidade</h3>
@@ -36,10 +262,10 @@
 
         <h3>A União Entre Campo e Cidade</h3>
         <p>
-          A verdadeira força está na união entre campo e cidade. Essa conexão possibilita um fluxo contínuo de recursos, conhecimentos e valores, garantindo que as cidades sejam abastecidas com produtos frescos e que o campo receba investimentos e atenção para se desenvolver de forma sustentável. Quando o campo encontra a cidade, criamos um equilíbrio essencial para o bem-estar coletivo, integrando progresso urbano com respeito à natureza e às nossas raízes. 
+          A verdadeira força está na união entre campo e cidade. Essa conexão possibilita um fluxo contínuo de recursos, conhecimentos e valores, garantindo que as cidades sejam abastecidas com produtos frescos e que o campo receba investimentos e atenção para se desenvolver de forma sustentável. Quando o campo encontra a cidade, criamos um equilíbrio essencial para o bem-estar coletivo, integrando progresso urbano com respeito à natureza e às nossas raízes.
         </p>
 
-        <p><small>Fonte: Texto autoral baseado no site <a href="https://meuartigo.brasilescola.uol.com.br/geografia/as-relacoes-entre-cidade-campo.htm" target="_blank">Meu Artigo Brasil Escola</a></small></p>
+        <p><small>Fonte: Texto autoral baseado no site <a href="https://meuartigo.brasilescola.uol.com.br/geografia/as-relacoes-entre-cidade-campo.htm" target="_blank" rel="noopener noreferrer">Meu Artigo Brasil Escola</a></small></p>
       </section>
     </main>
 
@@ -65,21 +291,6 @@
 
   <footer>
     <span>Desenvolvido por Heloísa Setelicki</span>
-    <a href="https://github.com/Heloisa7licki" target="_blank">
-      <img src="imagens/giht.png" alt="GitHub" />
+    <a href="https://github.com/Heloisa7licki" target="_blank" rel="noopener noreferrer">
+      <img src="imagensrecita/giht.png" alt="GitHub" />
     </a>
-    <a href="https://www.instagram.com/heloisa.setelicki/" target="_blank">
-      <img src="imagens/insta.png" alt="Instagram" />
-    </a>
-  </footer>
-
-  <script>
-    const toggle = document.getElementById('menuToggle');
-    const menu = document.getElementById('menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('ativo');
-    });
-  </script>
-
-</body>
-</html>
