@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barreado</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #a74f3f;
+      --primary-dark: #823d31;
+      --accent: #fffaf6;
+      --text: #3d261d;
+      --radius: 12px;
+      --shadow: 0 4px 14px rgba(130, 61, 49, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--accent);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: #fff;
+    }
+
+    h2 {
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    header {
+      background: var(--primary);
+      text-align: center;
+      padding: 60px 20px 80px;
+      animation: slideDown 0.9s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    main {
+      flex: 1;
+      padding: 0 20px 60px;
+      margin-top: -60px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--accent);
+      max-width: 900px;
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 30px 50px;
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .tab-buttons button {
+      flex: 1 1 160px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .tab-buttons button:hover {
+      background: var(--primary-dark);
+    }
+
+    .tab-buttons button.active {
+      box-shadow: 0 0 0 3px var(--primary-dark) inset;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    ul, ol {
+      margin-left: 1.2em;
+      margin-bottom: 1.2em;
+    }
+
+    li {
+      margin-bottom: 0.6em;
+    }
+
+    #steps li {
+      opacity: 0.4;
+      transition: opacity 0.3s;
+    }
+
+    #steps li.highlight {
+      opacity: 1;
+      font-weight: 500;
+    }
+
+    .step-nav {
+      text-align: right;
+      margin-top: 25px;
+    }
+
+    .step-nav button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .step-nav button:hover {
+      background: var(--primary-dark);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 20px 10px 30px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .card {
+        padding: 30px 20px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Barreado</h1>
+  </header>
+
+  <main>
+    <article class="card">
+
+      <div class="tab-buttons">
+        <button id="btnIngredients" class="active">Ingredientes</button>
+        <button id="btnSteps">Modo de preparo</button>
+      </div>
+
+      <section id="ingredients" class="active">
+        <h2>Ingredientes</h2>
+        <ul>
+          <li>2 kg de carne bovina (músculo, acém ou paleta)</li>
+          <li>200 g de bacon picado</li>
+          <li>3 cebolas grandes picadas</li>
+          <li>6 dentes de alho picados</li>
+          <li>2 folhas de louro</li>
+          <li>1 colher (chá) de cominho</li>
+          <li>Sal e pimenta-do-reino a gosto</li>
+          <li>3 colheres (sopa) de óleo</li>
+          <li>Farinha de mandioca para servir</li>
+        </ul>
+      </section>
+
+      <section id="steps">
+        <h2>Modo de preparo</h2>
+        <ol>
+          <li>Corte a carne em pedaços médios e tempere com sal, pimenta e cominho.</li>
+          <li>Em uma panela de barro (ou de pressão), aqueça o óleo e refogue o bacon até dourar.</li>
+          <li>Acrescente a cebola, o alho e as folhas de louro, refogando até murchar.</li>
+          <li>Adicione a carne e misture bem.</li>
+          <li>Cubra com água fervente, tampe a panela e cozinhe por cerca de 4 horas (ou 1h na pressão), até a carne desmanchar.</li>
+          <li>Desfie a carne com uma colher de pau e sirva com farinha de mandioca.</li>
+        </ol>
+
+        <div class="step-nav">
+          <button id="nextStep">Próximo passo ▶</button>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <script>
+    const btnIng = document.getElementById('btnIngredients');
+    const btnSteps = document.getElementById('btnSteps');
+    const secIng = document.getElementById('ingredients');
+    const secSteps = document.getElementById('steps');
+
+    function activate(tabBtn, tabSec) {
+      [btnIng, btnSteps].forEach(b => b.classList.remove('active'));
+      [secIng, secSteps].forEach(s => s.classList.remove('active'));
+      tabBtn.classList.add('active');
+      tabSec.classList.add('active');
+    }
+
+    btnIng.addEventListener('click', () => activate(btnIng, secIng));
+    btnSteps.addEventListener('click', () => activate(btnSteps, secSteps));
+
+    const stepsList = secSteps.querySelectorAll('li');
+    const nextBtn = document.getElementById('nextStep');
+    let current = 0;
+
+    function highlightStep(i) {
+      stepsList.forEach((li, idx) => li.classList.toggle('highlight', idx === i));
+    }
+    highlightStep(current);
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % stepsList.length;
+      highlightStep(current);
+
+      stepsList[current].animate(
+        [{ transform: 'scale(1.03)' }, { transform: 'scale(1)' }],
+        { duration: 300, easing: 'ease-out' }
+      );
+    });
+  </script>
+</body>
+</html>
