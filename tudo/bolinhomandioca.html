@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bolinho de Mandioca com Carne</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #d35400;
+      --primary-dark: #a84300;
+      --radius: 8px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
+      --font-family: 'Poppins', sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-family);
+    }
+    body {
+      background: #fff8f0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 2.4rem;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 700px;
+      width: 100%;
+      padding: 30px 25px 40px;
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .tab-buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-buttons button {
+      flex: 1 1 140px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: 600;
+      user-select: none;
+    }
+    .tab-buttons button:hover {
+      background: var(--primary-dark);
+    }
+    .tab-buttons button.active {
+      box-shadow: 0 0 0 3px var(--primary-dark) inset;
+    }
+    section {
+      display: none;
+      animation: fadeInSection 0.5s ease forwards;
+    }
+    section.active {
+      display: block;
+    }
+    @keyframes fadeInSection {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h2 {
+      color: var(--primary-dark);
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    ul, ol {
+      max-width: 600px;
+      margin: 0 auto 10px auto;
+      padding-left: 20px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    li {
+      margin-bottom: 0.6em;
+    }
+    #steps li {
+      opacity: 0.5;
+      transition: opacity 0.3s, font-weight 0.3s;
+      cursor: default;
+    }
+    #steps li.highlight {
+      opacity: 1;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .step-nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .step-nav button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
+    }
+    .step-nav button:hover {
+      background: var(--primary-dark);
+    }
+    footer {
+      text-align: center;
+      padding: 15px 10px 30px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 25px 15px 30px;
+      }
+      ul, ol {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bolinho de Mandioca com Carne</h1>
+  </header>
+  <main>
+    <article class="card">
+      <div class="tab-buttons">
+        <button id="btnIngredients" class="active" aria-controls="ingredients" aria-selected="true">Ingredientes</button>
+        <button id="btnSteps" aria-controls="steps" aria-selected="false">Modo de Preparo</button>
+      </div>
+      <section id="ingredients" class="active" role="tabpanel" tabindex="0">
+        <h2>Ingredientes</h2>
+        <ul>
+          <li>500g de mandioca (aipim) cozida e amassada</li>
+          <li>300g de carne moída</li>
+          <li>1 cebola média picada</li>
+          <li>2 dentes de alho picados</li>
+          <li>2 colheres (sopa) de cheiro-verde picado</li>
+          <li>1 ovo</li>
+          <li>Sal e pimenta-do-reino a gosto</li>
+          <li>Óleo para fritar</li>
+          <li>Farinha de trigo para dar o ponto (aproximadamente 3 colheres)</li>
+        </ul>
+      </section>
+      <section id="steps" role="tabpanel" tabindex="0">
+        <h2>Modo de Preparo</h2>
+        <ol id="steps-list">
+          <li>Refogue a cebola e o alho no óleo até dourar.</li>
+          <li>Adicione a carne moída, tempere com sal e pimenta e cozinhe até secar o líquido.</li>
+          <li>Misture o cheiro-verde, desligue o fogo e reserve.</li>
+          <li>Em uma tigela, misture a mandioca amassada, o ovo e a farinha de trigo até formar uma massa maleável.</li>
+          <li>Abra pequenas porções da massa, coloque um pouco do recheio de carne no centro e feche formando bolinhos.</li>
+          <li>Aqueça o óleo e frite os bolinhos até ficarem dourados e crocantes.</li>
+          <li>Escorra em papel absorvente e sirva quente.</li>
+        </ol>
+        <div class="step-nav">
+          <button id="nextStep">Próximo Passo ▶</button>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer>
+    Receita tradicional de bolinho de mandioca com carne moída.
+  </footer>
+  <script>
+    const btnIng = document.getElementById('btnIngredients');
+    const btnSteps = document.getElementById('btnSteps');
+    const secIng = document.getElementById('ingredients');
+    const secSteps = document.getElementById('steps');
+    const stepsList = document.getElementById('steps-list').children;
+    const nextBtn = document.getElementById('nextStep');
+
+    function activate(tabBtn, tabSec) {
+      [btnIng, btnSteps].forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      [secIng, secSteps].forEach(s => s.classList.remove('active'));
+      tabBtn.classList.add('active');
+      tabBtn.setAttribute('aria-selected', 'true');
+      tabSec.classList.add('active');
+    }
+    btnIng.addEventListener('click', () => activate(btnIng, secIng));
+    btnSteps.addEventListener('click', () => activate(btnSteps, secSteps));
+
+    let currentStep = 0;
+
+    function highlightStep(i) {
+      Array.from(stepsList).forEach((li, idx) => {
+        li.classList.toggle('highlight', idx === i);
+      });
+    }
+
+    highlightStep(currentStep);
+
+    nextBtn.addEventListener('click', () => {
+      currentStep++;
+      if (currentStep >= stepsList.length) currentStep = 0;
+      highlightStep(currentStep);
+      stepsList[currentStep].animate(
+        [{ transform: 'scale(1.05)' }, { transform: 'scale(1)' }],
+        { duration: 300, easing: 'ease-out' }
+      );
+    });
+  </script>
+</body>
+</html>
