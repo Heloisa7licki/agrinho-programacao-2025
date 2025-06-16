@@ -4,7 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pratos - Do Campo à Cidade</title>
+ 
   <link rel="stylesheet" href="pratos.css" />
+
+
+  <style>
+   
+    .welcome-banner{
+      position:fixed;
+      top:-60px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#ff7c00; /* cor que remete à abóbora */
+      color:#fff;
+      padding:14px 24px;
+      border-radius:0 0 8px 8px;
+      box-shadow:0 4px 14px rgba(0,0,0,.2);
+      font-weight:500;
+      transition:top .6s ease;
+      z-index:1000;
+    }
+    .welcome-banner.show{top:0;}
+
+    
+    .search-bar{
+      max-width:400px;
+      margin:20px auto 30px;
+      padding:0 10px;
+    }
+    .search-bar input{
+      width:100%;
+      padding:10px 14px;
+      border:2px solid #ccc;
+      border-radius:8px;
+      font-size:1rem;
+    }
+
+    
+    .card{
+      transition:transform .3s, box-shadow .3s;
+    }
+    .card:hover{
+      transform:translateY(-6px) scale(1.03);
+      box-shadow:0 8px 18px rgba(0,0,0,.15);
+    }
+
+   
+    .card.hidden{display:none;}
+  </style>
 </head>
 <body>
   <header>
@@ -18,11 +65,16 @@
     </nav>
   </header>
 
+  
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Pesquisar prato..." />
+  </div>
+
   <main>
     <div class="cards-container">
       <div class="card">
         <a href="docedeabobora.html" target="_blank">
-          <img src="imagens/doce de abrobara.jpg" alt="Doce de Abóbora com Coco"  />
+          <img src="imagens/doce de abrobara.jpg" alt="Doce de Abóbora com Coco" />
         </a>
         <p class="descricao">Doce tradicional feito com abóbora e coco ralado, comum nas festas juninas brasileiras.</p>
       </div>
@@ -88,11 +140,37 @@
     </a>
   </footer>
 
+  <
   <script>
-    const toggle = document.getElementById('menuToggle');
-    const menu = document.getElementById('menu');
+   
+    const toggle   = document.getElementById('menuToggle');
+    const menu     = document.getElementById('menu');
     toggle.addEventListener('click', () => {
       menu.classList.toggle('ativo');
+    });
+
+    
+    const banner = document.createElement('div');
+    banner.className = 'welcome-banner';
+    banner.textContent = 'Bem‑vindo(a) ao Do Campo à Cidade!';
+    document.body.prepend(banner);
+   
+    setTimeout(()=>banner.classList.add('show'), 100);
+    setTimeout(()=>banner.classList.remove('show'), 4000);
+    setTimeout(()=>banner.remove(), 4600);
+
+    
+    const searchInput = document.getElementById('searchInput');
+    const cards       = document.querySelectorAll('.card');
+
+    searchInput.addEventListener('input', () => {
+      const term = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const text = card.querySelector('p').textContent.toLowerCase();
+        const alt  = card.querySelector('img').alt.toLowerCase();
+        const match = text.includes(term) || alt.includes(term);
+        card.classList.toggle('hidden', !match);
+      });
     });
   </script>
 </body>
