@@ -1,3 +1,13 @@
+
+:root {
+  --verde-claro: #d6f5d6;
+  --verde-medio: #7fbf7f;
+  --verde-escuro: #2d6a4f;
+  --verde-hover: #52b788;
+  --fundo: #f0fdf4;
+  --texto: #2f3e46;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,13 +16,15 @@
 
 html, body {
   height: 100%;
-  font-family: Arial, sans-serif;
-  background-color: #fdfdfd;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  background-color: #000;
+  background-color: var(--verde-escuro);
   color: #fff;
   padding: 20px;
   position: relative;
@@ -52,17 +64,18 @@ nav.ativo {
 
 nav a {
   padding: 12px 20px;
-  color: #333;
+  color: var(--verde-escuro);
   text-decoration: none;
   border-bottom: 1px solid #eee;
 }
 
 nav a:hover {
-  background-color: #f0f0f0;
+  background-color: var(--verde-claro);
 }
 
 main {
   padding: 30px;
+  flex: 1;
 }
 
 .cards-container {
@@ -87,11 +100,12 @@ main {
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card img:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .descricao {
@@ -102,7 +116,7 @@ main {
 }
 
 footer {
-  background-color: #252525;
+  background-color: var(--verde-escuro);
   color: #fff;
   padding: 15px 20px;
   text-align: center;
@@ -110,6 +124,7 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin-top: auto;
 }
 
 footer span {
