@@ -37,7 +37,7 @@ body, html {
 
 .hero a {
   padding: 12px 24px;
-  background-color: #0d420f;
+  background-color: #1b5e20;
   color: white;
   text-decoration: none;
   font-size: 1.2em;
@@ -46,7 +46,7 @@ body, html {
 }
 
 .hero a:hover {
-  background-color: #0d420f;
+  background-color: #1b5e20;
 }
 
 section#agricultura-urbana {
